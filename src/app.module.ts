@@ -7,6 +7,8 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EnvVars } from 'common/interface';
+import { PerfumesService } from './perfumes/perfumes.service';
+import { PerfumesModule } from './perfumes/perfumes.module';
 
 @Module({
     imports: [
@@ -21,8 +23,9 @@ import { EnvVars } from 'common/interface';
         }),
         inject: [ConfigService],
         }),
+        PerfumesModule,
     ],
     controllers: [AppController, UsersController],
-    providers: [AppService, UsersService],
+    providers: [AppService, UsersService, PerfumesService],
 })
 export class AppModule {}
