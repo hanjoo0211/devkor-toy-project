@@ -1,14 +1,17 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class AddUserDto {
-  @IsString()
-  name: string;
+    @IsString()
+    username: string;
 
-  @IsNumber()
-  age: number;
+    @IsString()
+    password: string;
 }
 
 export class UpdateUserDto {
-  @IsNumber()
-  age: number;
+    @IsString()
+    username: string;
+  
+    @IsString()
+    password: string;
 }
