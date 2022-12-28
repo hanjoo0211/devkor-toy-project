@@ -9,6 +9,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EnvVars } from 'common/interface';
 import { PerfumesService } from './perfumes/perfumes.service';
 import { PerfumesModule } from './perfumes/perfumes.module';
+import { ReviewsService } from './reviews/reviews.service';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
     imports: [
@@ -24,8 +26,9 @@ import { PerfumesModule } from './perfumes/perfumes.module';
         inject: [ConfigService],
         }),
         PerfumesModule,
+        ReviewsModule,
     ],
     controllers: [AppController, UsersController],
-    providers: [AppService, UsersService, PerfumesService],
+    providers: [AppService, UsersService, PerfumesService, ReviewsService],
 })
 export class AppModule {}
