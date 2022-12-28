@@ -15,6 +15,10 @@ export class ReviewsService {
         return this.reviewsRepository.findBy({ pid });
     }
 
+    getReviewsByUid(uid: number): Promise<Reviews[]> {
+        return this.reviewsRepository.findBy({ uid });
+    }
+
     async addReviewByPid(pid: number, addReviewDto: AddReviewDto): Promise<void> {
         await this.reviewsRepository.insert({
             pid: pid,

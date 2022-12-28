@@ -7,6 +7,11 @@ import { Reviews } from './reviews.entity';
 export class ReviewsController {
     constructor(private readonly reviewsService: ReviewsService) {}
 
+    @Get('user/:uid')
+    getReviewsByUid(@Param('uid') uid: number): Promise<Reviews[]> {
+        return this.reviewsService.getReviewsByUid(uid);
+    }
+
     @Get(':pid/avgscore')
     getScoreByPid(@Param('pid') pid: number): Promise<number> {
         return this.reviewsService.getScoreByPid(pid);
