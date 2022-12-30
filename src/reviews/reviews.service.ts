@@ -33,7 +33,7 @@ export class ReviewsService {
     }
 
     async updateReviewByPidUid(pid: number, uid: number, updateReviewDto: UpdateReviewDto): Promise<void> {
-        await this.reviewsRepository.update({ pid, uid }, { score: updateReviewDto.score, content: updateReviewDto.content });
+        await this.reviewsRepository.update({ pid, uid }, updateReviewDto);
     }
 
     async deleteReviewByPidUid(pid: number, uid: number): Promise<void> {
