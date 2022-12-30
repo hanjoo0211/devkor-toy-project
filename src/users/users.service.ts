@@ -24,7 +24,7 @@ export class UsersService {
     }
 
     async updateUserById(id: number, updateUserDto: UpdateUserDto): Promise<void> {
-        await this.usersRepository.update(id, { username: updateUserDto.username, password: updateUserDto.password });
+        await this.usersRepository.update(id, updateUserDto);
     }
 
     async deleteUserById(id: number): Promise<void> {
