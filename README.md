@@ -1,6 +1,7 @@
 # 2022-2 DevKor Project: Perfume Review Webpage
 
 ## [API Server](http://ec2-43-201-31-153.ap-northeast-2.compute.amazonaws.com:3000)
+perfumes table에 향수 sample 데이터 넣어두었습니다!
 
 ```text
 http://ec2-43-201-31-153.ap-northeast-2.compute.amazonaws.com:3000
